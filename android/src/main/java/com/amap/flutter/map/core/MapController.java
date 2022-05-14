@@ -154,7 +154,8 @@ public class MapController
                 break;
             case Const.METHOD_MAP_GET_SCREEN_LOCATION:
                 if (null != amap) {
-                    LatLng location = new LatLng(call.argument("latitude"), call.argument("longitude"));
+                    LatLng location = new LatLng(Double.parseDouble(Objects.requireNonNull(call.argument("latitude")).toString()),
+                            Double.parseDouble(Objects.requireNonNull(call.argument("longitude")).toString()));
                     Point position = amap.getProjection().toScreenLocation(location);
                     result.success(ConvertUtil.pointToMap(position));
                 }
