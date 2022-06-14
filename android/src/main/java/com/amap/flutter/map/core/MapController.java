@@ -25,7 +25,7 @@ import com.amap.flutter.map.utils.LogUtil;
 import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
-//import java.util.Objects;
+import java.util.Objects;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -155,8 +155,8 @@ public class MapController
                 break;
             case Const.METHOD_MAP_GET_SCREEN_LOCATION:
                 if (null != amap) {
-                    LatLng location = new LatLng(Double.parseDouble(Objects.requireNonNull(call.argument("latitude")).toString()),
-                            Double.parseDouble(Objects.requireNonNull(call.argument("longitude")).toString()));
+                    LatLng location = new LatLng(Double.parseDouble(Ocall.argument("latitude")).toString(),
+                            Double.parseDouble(call.argument("longitude")).toString());
                     Point position = amap.getProjection().toScreenLocation(location);
                     result.success(ConvertUtil.pointToMap(position));
                 }
