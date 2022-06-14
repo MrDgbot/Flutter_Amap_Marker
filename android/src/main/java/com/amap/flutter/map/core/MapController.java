@@ -25,7 +25,7 @@ import com.amap.flutter.map.utils.LogUtil;
 import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
+//import java.util.Objects;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
